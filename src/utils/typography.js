@@ -3,11 +3,15 @@ import Typography from "typography";
 const options = {
 	googleFonts: [
 		{
-			name: "Space Mono",
+			name: `Space Mono`,
+			styles: [`400`, `400i`, `700`, `700i`],
+		},
+		{
+			name: `Raleway`,
 			styles: [`400`, `400i`, `700`, `700i`],
 		},
 	],
-	baseFontSize: "30px",
+	baseFontSize: `18px`,
 	baseLineHeight: 1.4,
 	headerColor: `hsla(0,0%,0%,0.8)`,
 	bodyColor: `hsla(0,0%,0%,0.7)`,
@@ -16,12 +20,15 @@ const options = {
 	bodyFontFamily: [`Space Mono`, `sans-serif`],
 	overrideStyles: () => {
 		return {
-			html: {},
+			html: {
+				overflowY: `scroll`,
+			},
 			h1: {
 				lineHeight: 1.1,
 			},
 			a: {
-				color: `#3897f0`,
+				textDecoration: "none",
+				color: `#44d9e7`,
 			},
 		};
 	},
@@ -29,9 +36,9 @@ const options = {
 
 const typography = new Typography(options);
 
-if (process.env.NODE_ENV !== "production") {
+// Hot reload typography in development.
+if (process.env.NODE_ENV !== `production`) {
 	typography.injectStyles();
 }
 
-// Hot reload typography in development.
-export default typography;
+module.exports = typography;

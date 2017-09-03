@@ -1,12 +1,17 @@
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import { rhythm, scale } from "../utils/typography";
+import { rhythm as r } from "../utils/typography";
 import g from "glamorous";
+import { jsMediaQueries as jm } from "../utils/mediaqueries";
 
-let LinkedS = g(Link)({
-	background: "black",
-	color: "white",
-	fontFamily: "Space Mono",
+let LinkS = g(Link)({
+	// background: "black",
+	padding: `${r(0.7)} ${r(1.5)}`,
+});
+
+let NavS = g.nav({
+	display: "flex",
+	justifyContent: "space-evenly",
 });
 
 const Nav = ({ data }) => {
@@ -17,14 +22,29 @@ const Nav = ({ data }) => {
 			fields: { slug = "default" },
 		} = post.node;
 
-		return (
-			<LinkedS key={post.node.id} to={slug}>
-				{title}
-			</LinkedS>
-		);
+		if (slug !== "/home/") {
+			return (
+				<LinkS key={post.node.id} to={slug}>
+					{title}
+				</LinkS>
+			);
+		}
 	});
 
-	return <nav className="nav-wrapper">{titles}</nav>;
+	let nav;
+
+	if (jm.smallnt) {
+		nav = titles;
+	} else {
+		nav = null;
+	}
+
+	return (
+		<NavS className="nav-wrapper">
+			{nav}
+			<LinkS to="slug">Home</LinkS>
+		</NavS>
+	);
 };
 
 export default Nav;

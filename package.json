@@ -21,6 +21,7 @@
 		"gatsby-source-filesystem": "^1.4.10",
 		"gatsby-transformer-remark": "^1.7.6",
 		"gatsby-transformer-sharp": "^1.6.4",
-		"glamorous": "^4.6.0"
+		"glamorous": "^4.6.0",
+		"react-burger-menu": "^2.1.5"
 	}
 }
