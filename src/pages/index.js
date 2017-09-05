@@ -6,6 +6,7 @@ import { bwToColorStr } from "../utils/css-animes";
 
 class LandingPage extends PureComponent {
   render() {
+    console.log("render landingpage ", this.props.pathContext);
     let markDownPosts = this.props.data.allMarkdownRemark.edges;
 
     let homeMarkdown = markDownPosts.filter(post => {
@@ -18,7 +19,7 @@ class LandingPage extends PureComponent {
     // more than one routes to use the animation b/w -> color ?
 
     // NOTE: I could have used react helmet inside layout as well
-    if ((this.props.location.pathname = "/")) {
+    if (this.props.location.pathname === "/") {
       css.insert(`
         ${bwToColorStr}
         .gatsby-resp-image-image {

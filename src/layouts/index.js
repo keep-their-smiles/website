@@ -1,10 +1,8 @@
 import React, { PureComponent } from "react";
 import Link from "gatsby-link";
 import Header from "../components/Header";
-import {
-  jsMediaQueries as jm,
-  cssMediaQueries as cm,
-} from "../utils/mediaqueries";
+import { cssMediaQueries as cm } from "../utils/mediaqueries";
+import { jsMediaQueries as jm } from "../../gatsby-browser";
 import Burger from "../components/NavMobile";
 import { Div } from "glamorous";
 import Helmet from "react-helmet";
