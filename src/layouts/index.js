@@ -1,17 +1,39 @@
 import React, { PureComponent } from "react";
 import Link from "gatsby-link";
 import Header from "../components/Header";
-import { jsMediaQueries as jm } from "../utils/mediaqueries";
+import {
+  jsMediaQueries as jm,
+  cssMediaQueries as cm,
+} from "../utils/mediaqueries";
 import Burger from "../components/NavMobile";
 import { Div } from "glamorous";
 import Helmet from "react-helmet";
 import TitleCard from "../components/TitleCard";
+import g from "glamorous";
+import { rhythm as r } from "../utils/typography";
 
 const props = {
-  title: `Keep Their Smiles`,
-  subtitle: `A Fund Raiser`,
+  title: `Mother Teresa Welfare Trust`,
+  subtitle: `Doing Small Things With Great ❤️`,
 };
 
+const PageContainerDIV = g.div({}, ({ isHome }) => {
+  if (!isHome) {
+    return {
+      position: "absolute",
+      top: `${r(14)}`,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      textAlign: "center",
+      [cm.smallnt]: {
+        // position: "relative",
+        top: `${r(12)}`,
+        // textAlign: "center",
+      },
+    };
+  }
+});
 import { rhythm, scale } from "../utils/typography";
 
 class Wrapper extends PureComponent {
@@ -23,12 +45,24 @@ class Wrapper extends PureComponent {
       flexDirection: "column",
       justifyContent: "center",
     };
-    let helmet;
+    let conditionalHelmet, helmet;
 
-    if (this.props.location.pathname === "/") {
+    helmet = (
+      <Helmet>
+        <style type="text/css">
+          {`
+            .page-container p {
+              margin-bottom: 0;
+            }
+          `}
+        </style>
+      </Helmet>
+    );
+
+    if (this.props.location.pathname === "/" && !jm.landscape) {
       ethsSProps.height = `100vh`;
       ethsSProps.overflowY = `hidden`;
-      helmet = (
+      conditionalHelmet = (
         <Helmet>
           <style type="text/css">
             {`
@@ -38,10 +72,6 @@ class Wrapper extends PureComponent {
 
               body {
                 background: "aqua"
-              }
-
-              .page-container p {
-                margin-bottom: 0;
               }
             `}
           </style>
@@ -53,10 +83,15 @@ class Wrapper extends PureComponent {
       <div>
         {jm.smallnt ? <Header data={data} /> : <Burger data={data} />}
         <Div id="everything" {...ethsSProps}>
+          {conditionalHelmet}
           {helmet}
-          <div className="page-container" id="page-container" style={{}}>
+          <PageContainerDIV
+            className="page-container"
+            id="page-container"
+            isHome={this.props.location.pathname === "/"}
+          >
             {this.props.children()}
-          </div>
+          </PageContainerDIV>
           <TitleCard {...props} />
         </Div>
       </div>

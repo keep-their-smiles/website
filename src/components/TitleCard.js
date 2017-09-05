@@ -41,7 +41,7 @@ const SDIVCont = g.div({
     },
   })} 7s ease-in`,
   [cssMediaQueries.smallnt]: {
-    top: `${r(2.7)}`,
+    top: `${r(2.6)}`,
     "> h1": {
       fontSize: `${r(2.4)}`,
       padding: `0 0 ${r(0.5)}`,
