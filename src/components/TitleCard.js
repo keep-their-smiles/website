@@ -12,11 +12,7 @@ const SDIVCont = g.div({
     ? `rgba(208, 205, 215, 0.6)`
     : `rgba(34, 176, 214, 0.3)`,
   textAlign: "center",
-  // height: "40%",
-  // position: "relative",
-  // top: `${r(-3)}`,
   zIndex: "1",
-  // height: "100%",
   "> h1, h2": {
     color: "#000",
     fontFamily: "Anton, sans-serif",
@@ -49,15 +45,8 @@ const SDIVCont = g.div({
     },
     position: "absolute",
     height: "auto",
-    // top: `${r(10.9)}`,
-    // left: "50%",
-    // transform: `translate(-50%)`,
   },
 });
-
-// const SDIVCont = g.div(bckgrndColAnimation);
-
-// console.log(SDIVCont.props);
 
 export default props => {
   const { title, subtitle } = props;

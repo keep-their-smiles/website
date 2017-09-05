@@ -30,6 +30,9 @@ const PageContainerDIV = g.div({}, ({ isHome }) => {
       right: 0,
       bottom: 0,
       textAlign: "center",
+      "> div": {
+        paddingBottom: "40px",
+      },
       [cm.smallnt]: {
         // position: "relative",
         top: `${r(12)}`,
