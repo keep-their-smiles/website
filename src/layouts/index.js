@@ -44,6 +44,7 @@ import { rhythm, scale } from "../utils/typography";
 class Wrapper extends PureComponent {
   render() {
     let data = this.props.data.allMarkdownRemark.edges;
+
     let ethsSProps = {
       background: `rgba(208, 205, 215, 0.6)`,
       display: "flex",
@@ -95,7 +96,9 @@ class Wrapper extends PureComponent {
             id="page-container"
             isHome={this.props.location.pathname === "/"}
           >
-            {this.props.children()}
+            {this.props.children({
+              location: { pathname: this.props.location.pathname },
+            })}
           </PageContainerDIV>
           <TitleCard {...props} />
         </Div>
