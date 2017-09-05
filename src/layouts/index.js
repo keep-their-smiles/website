@@ -30,6 +30,9 @@ const PageContainerDIV = g.div({}, ({ isHome }) => {
       right: 0,
       bottom: 0,
       textAlign: "center",
+      "> div": {
+        paddingBottom: "40px",
+      },
       [cm.smallnt]: {
         // position: "relative",
         top: `${r(12)}`,
@@ -65,7 +68,7 @@ class Wrapper extends PureComponent {
       </Helmet>
     );
 
-    if (this.props.location.pathname === "/" && !jm.landscape) {
+    if (this.props.location.pathname === "/") {
       ethsSProps.height = `100vh`;
       ethsSProps.overflowY = `hidden`;
       conditionalHelmet = (
@@ -85,8 +88,19 @@ class Wrapper extends PureComponent {
       );
     }
 
+    if (jm.landscape && !jm.smallnt) {
+      ethsSProps.overflowY = `auto`;
+    }
+
     return (
       <div>
+        <Helmet
+          defaultTitle="MTWT"
+          titleTemplate="MTWT | %s"
+          title={`${this.props.location.pathname.split(
+            /\/([a-zA-Z]{0,})\//,
+          )[1] || "home"}`}
+        />
         {jm.smallnt ? <Header data={data} /> : <Burger data={data} />}
         <Div id="everything" {...ethsSProps}>
           {conditionalHelmet}
@@ -97,7 +111,7 @@ class Wrapper extends PureComponent {
             isHome={this.props.location.pathname === "/"}
           >
             {this.props.children({
-              location: { pathname: this.props.location.pathname },
+              ...this.props,
             })}
           </PageContainerDIV>
           <TitleCard {...props} />
