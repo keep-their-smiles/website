@@ -18,7 +18,7 @@ class LandingPage extends PureComponent {
     // more than one routes to use the animation b/w -> color ?
 
     // NOTE: I could have used react helmet inside layout as well
-    if ((this.props.location.pathname = "/")) {
+    if (this.props.location.pathname === "/") {
       css.insert(`
         ${bwToColorStr}
         .gatsby-resp-image-image {

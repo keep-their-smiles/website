@@ -1,10 +1,8 @@
 import React, { PureComponent } from "react";
 import Link from "gatsby-link";
 import Header from "../components/Header";
-import {
-  jsMediaQueries as jm,
-  cssMediaQueries as cm,
-} from "../utils/mediaqueries";
+import { cssMediaQueries as cm } from "../utils/mediaqueries";
+import { jsMediaQueries as jm } from "../../gatsby-browser";
 import Burger from "../components/NavMobile";
 import { Div } from "glamorous";
 import Helmet from "react-helmet";
@@ -66,7 +64,7 @@ class Wrapper extends PureComponent {
       </Helmet>
     );
 
-    if (this.props.location.pathname === "/" && !jm.landscape) {
+    if (this.props.location.pathname === "/") {
       ethsSProps.height = `100vh`;
       ethsSProps.overflowY = `hidden`;
       conditionalHelmet = (
@@ -86,6 +84,10 @@ class Wrapper extends PureComponent {
       );
     }
 
+    if (jm.landscape && !jm.smallnt) {
+      ethsSProps.overflowY = `auto`;
+    }
+
     return (
       <div>
         {jm.smallnt ? <Header data={data} /> : <Burger data={data} />}
@@ -97,7 +99,9 @@ class Wrapper extends PureComponent {
             id="page-container"
             isHome={this.props.location.pathname === "/"}
           >
-            {this.props.children()}
+            {this.props.children({
+              ...this.props,
+            })}
           </PageContainerDIV>
           <TitleCard {...props} />
         </Div>

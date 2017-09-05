@@ -2,7 +2,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import { rhythm as r } from "../utils/typography";
 import g from "glamorous";
-import { jsMediaQueries as jm } from "../utils/mediaqueries";
+import { jsMediaQueries as jm } from "../../gatsby-browser";
 import { navColorAnimeObj } from "../utils/css-animes";
 import { css } from "glamor";
 

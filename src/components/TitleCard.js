@@ -1,7 +1,8 @@
 import g from "glamorous";
 import { rhythm as r } from "../utils/typography";
 import { css } from "glamor";
-import { cssMediaQueries, jsMediaQueries as jm } from "../utils/mediaqueries";
+import { cssMediaQueries } from "../utils/mediaqueries";
+import { jsMediaQueries as jm } from "../../gatsby-browser";
 
 const SDIVCont = g.div({
   flex: 1,
@@ -56,7 +57,7 @@ const SDIVCont = g.div({
 
 // const SDIVCont = g.div(bckgrndColAnimation);
 
-console.log(SDIVCont.props);
+// console.log(SDIVCont.props);
 
 export default props => {
   const { title, subtitle } = props;

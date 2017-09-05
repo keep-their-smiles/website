@@ -7,14 +7,4 @@ const cssMediaQueries = {
   landscape: `@media only screen and (orientation:landscape)`,
 };
 
-let jsMediaQueries = {};
-
-if (window) {
-  for (let breakpt in cssMediaQueries) {
-    jsMediaQueries[breakpt] = window.matchMedia(
-      cssMediaQueries[breakpt].match(/and(.*)/)[1],
-    ).matches;
-  }
-}
-
-export { cssMediaQueries, jsMediaQueries };
+export { cssMediaQueries };
