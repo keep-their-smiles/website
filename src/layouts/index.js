@@ -90,6 +90,13 @@ class Wrapper extends PureComponent {
 
     return (
       <div>
+        <Helmet
+          defaultTitle="MTWT"
+          titleTemplate="MTWT | %s"
+          title={`${this.props.location.pathname.split(
+            /\/([a-zA-Z]{0,})\//,
+          )[1] || "home"}`}
+        />
         {jm.smallnt ? <Header data={data} /> : <Burger data={data} />}
         <Div id="everything" {...ethsSProps}>
           {conditionalHelmet}
