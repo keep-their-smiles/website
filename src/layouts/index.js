@@ -20,6 +20,12 @@ const props = {
 const PageContainerDIV = g.div({}, ({ isHome }) => {
   if (!isHome) {
     return {
+      width: "80%",
+      margin: "0 auto",
+      ".page-container div p": {
+        textAlign: "left",
+      },
+      fontSize: `${r(0.8)}`,
       position: "absolute",
       top: `${r(14)}`,
       left: 0,
@@ -29,6 +35,7 @@ const PageContainerDIV = g.div({}, ({ isHome }) => {
       [cm.smallnt]: {
         // position: "relative",
         top: `${r(12)}`,
+        width: "60%",
         // textAlign: "center",
       },
     };

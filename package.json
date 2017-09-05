@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build && gh-pages -d public --branch master"
   },
   "dependencies": {
     "gatsby": "^1.8.11",
@@ -23,5 +24,8 @@
     "gatsby-transformer-sharp": "^1.6.4",
     "glamorous": "^4.6.0",
     "react-burger-menu": "^2.1.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
   }
 }

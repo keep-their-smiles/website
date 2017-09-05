@@ -27,7 +27,7 @@ const SDIVCont = g.div({
   },
   "> h1": {
     fontSize: `${r(2)}`,
-    padding: `${r(1.4)} 0 ${r(0.5)}`,
+    padding: `${r(1.5)} 0 ${r(0.5)}`,
   },
   "> h2": {
     fontSize: `${r(1.5)}`,
@@ -44,7 +44,7 @@ const SDIVCont = g.div({
     top: `${r(2.6)}`,
     "> h1": {
       fontSize: `${r(2.4)}`,
-      padding: `0 0 ${r(0.5)}`,
+      padding: `${r(0.5)} 0 ${r(0.5)}`,
     },
     position: "absolute",
     height: "auto",

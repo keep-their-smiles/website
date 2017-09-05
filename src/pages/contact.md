@@ -2,13 +2,24 @@
 title: Contact
 ---
 
-# contact
+# Contact
 
 Mother Teresa Welfare Trust,
-104
-B Block
-Shamsher Tower
+<br>
+104 B Block
+<br>
+Shamsher Tower,
+<br>
 Kharngajhar
-Telco
-Jamshedpur,
+<br>
+Telco Jamshedpur,
 Jharkhand
+
+<br>
+
+Mr. Harpal Singh
++917209638401
+
+<br>
+
+[Facebook: Mother Teresa Welfare Trust Page](https://www.facebook.com/mtwtjsr/)
