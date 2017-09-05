@@ -9,4 +9,6 @@
 
 ---
 Components to use
-- [React Headroom](https://kyleamathews.github.io/react-headroom/)
+- (edit: not needed in the layout I'm going for)[React Headroom](https://kyleamathews.github.io/react-headroom/)
+- Learnings
+  1. I could automatically vary base font size for across media queries using relative viewport units like [this](https://css-tricks.com/fun-viewport-units/)
