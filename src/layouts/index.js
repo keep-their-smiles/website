@@ -114,7 +114,7 @@ class Wrapper extends PureComponent {
               ...this.props,
             })}
           </PageContainerDIV>
-          <TitleCard {...props} />
+          <TitleCard {...props} isHome={this.props.location.pathname === "/"} />
         </Div>
       </div>
     );

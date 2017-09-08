@@ -12,4 +12,8 @@ A little help can bring smile on a thousand faces. You can go upto our [Ketto pa
 
 <br>
 
+<iframe width="320" height="490" src="https://www.ketto.org/campaign/campaign_embed_widget.php?fmd_id=35577" frameborder="0"></iframe>
+
+<br>
+
 If you wish to know anything about us or talk to us, please feel free to [contact us](/contact)
